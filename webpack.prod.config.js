@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin     = require('html-webpack-plugin');
 const { VueLoaderPlugin }   = require('vue-loader')
-const InlineChunkHtmlPlugin = require('inline-chunk-html-plugin');
 const webpack               = require('webpack');
 const path                  = require('path');
 
@@ -34,12 +33,19 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html', inject: true }),
-    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/[.]js/]),
     new VueLoaderPlugin()
   ],
 };

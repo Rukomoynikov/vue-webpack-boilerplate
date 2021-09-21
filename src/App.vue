@@ -18,6 +18,7 @@ export default defineComponent({
 article {
   & p {
     color: red;
+    font-family: IBM Plex Sans;
   }
 }
 </style>

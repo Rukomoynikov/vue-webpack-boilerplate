@@ -37,11 +37,24 @@ module.exports = {
           },
           'postcss-loader'
         ]
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.dev.html', inject: true }),
     new VueLoaderPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      assets: path.resolve(__dirname, 'src/assets/'),
+    },
+  },
 };
