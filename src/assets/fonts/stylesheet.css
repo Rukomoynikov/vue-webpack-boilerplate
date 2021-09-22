@@ -16,3 +16,11 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('subset-IBMPlexSans-SemiBold.woff2') format('woff2'),
+        url('subset-IBMPlexSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

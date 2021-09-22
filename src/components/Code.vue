@@ -1,3 +1,5 @@
+<template>
+<pre><code class="code">
 {
   "name": "Boilerplate",
   "version": "0.0.1",
@@ -5,8 +7,7 @@
   "scripts": {
     "build": "webpack serve -c webpack.dev.config.js",
     "build:prod": "webpack -c webpack.prod.config.js",
-    "lint": "eslint src --ext js,vue,ts --fix",
-    "deploy-pages": "npm run build:prod && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "lint": "eslint src --ext js,vue,ts --fix"
   },
   "private": true,
   "license": "ISC",
@@ -27,7 +28,6 @@
     "postcss-cli": "^8.3.1",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
-    "push-dir": "^0.4.1",
     "ts-loader": "^9.2.5",
     "typescript": "^4.3.5",
     "vue-loader": "^16.5.0",
@@ -41,3 +41,24 @@
     "vue": "^3.1.5"
   }
 }
+  </code></pre>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'Code',
+  setup() {
+    return {}
+  }
+})
+</script>
+
+<style>
+.code {
+  font-family: IBM Plex Mono, sans-serif;
+  font-size: 16px;
+  color: #100862;
+}
+</style>
