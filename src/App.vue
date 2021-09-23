@@ -1,6 +1,8 @@
 <template>
-  <div>Vue 5</div>
-  <article><p>1</p></article>
+  <div>
+    <div>Vue 5</div>
+    <article><p>1</p></article>
+  </div>
 </template>
 
 <script lang="ts">
