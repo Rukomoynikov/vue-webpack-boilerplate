@@ -4,7 +4,7 @@ const webpack             = require('webpack');
 const path                = require('path');
 
 module.exports = {
-  mode: "development",
+  mode: process.env.ENV || "development",
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -55,7 +55,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.dev.html', inject: true }),
+    new HtmlWebpackPlugin({ template: './src/index.html', inject: true }),
     new VueLoaderPlugin()
   ],
   resolve: {

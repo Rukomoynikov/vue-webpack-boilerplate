@@ -3,11 +3,12 @@
 {
   "name": "Boilerplate",
   "version": "0.0.1",
-  "description": "This boilepate can be a good start. Here you can find: vue 3, webpack 5, postcss, typescript.",
+  "description": "This boilerplate can be a good start. Here you can find: vue 3, webpack 5, postcss, typescript.",
   "scripts": {
-    "build": "webpack serve -c webpack.dev.config.js",
-    "build:prod": "webpack -c webpack.prod.config.js",
-    "lint": "eslint src --ext js,vue,ts --fix"
+    "build": "webpack serve -c webpack.config.js --host 0.0.0.0",
+    "build:prod": "ENV=production webpack -c webpack.config.js",
+    "lint": "eslint src --ext js,vue,ts --fix",
+    "deploy-pages": "npm run build:prod && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "private": true,
   "license": "ISC",
@@ -28,6 +29,7 @@
     "postcss-cli": "^8.3.1",
     "postcss-loader": "^6.1.1",
     "postcss-preset-env": "^6.7.0",
+    "push-dir": "^0.4.1",
     "ts-loader": "^9.2.5",
     "typescript": "^4.3.5",
     "vue-loader": "^16.5.0",
@@ -48,10 +50,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'Code',
-  setup() {
-    return {}
-  }
+  name: 'Code'
 })
 </script>
 
@@ -60,5 +59,11 @@ export default defineComponent({
   font-family: IBM Plex Mono, sans-serif;
   font-size: 16px;
   color: #100862;
+}
+
+@media (max-width: 1024px) {
+  .code {
+    font-size: 22px;
+  }
 }
 </style>
